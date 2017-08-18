@@ -1,6 +1,6 @@
 # Pancarcho (pata pocha)
 
-** A little keystroke helper for 7 days to die **
+**A little keystroke helper for 7 days to die**
 
 ## Requirements
 
