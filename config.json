@@ -1,7 +1,23 @@
 {
   "hook" : "gkm",
   "base" : {
+    "name" : "base",
     "x" : 677,
     "z" : 885
+  },
+  "traderForest" : {
+    "name" : "trader in forest",
+    "x" : -1053,
+    "z" : 947
+  },
+  "traderBurnforest" : {
+    "name" : "trader in burnt forest",
+    "x" : 316,
+    "z" : 105
+  },
+  "traderSnow" : {
+    "name" : "trader in snow",
+    "x" : 1404,
+    "z" : 1324
   }
 }

@@ -3,7 +3,7 @@ const config = require('./config');
 const chalk = require('chalk');
 const robot = require("robotjs");
 
-console.log(config.hook);
+console.log(chalk.yellow(config.hook) + ' hook registered.\n');
 
 if(config.hook === 'iohook') {
   const ioHook = require('iohook');  
@@ -32,6 +32,15 @@ if(config.hook === 'gkm') {
     if(this.event + ' ' + data === 'key.pressed NumPad 0') {
       moleMode();
     }
+    if(this.event + ' ' + data === 'key.pressed NumPad 1') {
+      teleport(config.traderForest);
+    }
+    if(this.event + ' ' + data === 'key.pressed NumPad 2') {
+      teleport(config.traderBurnforest);
+    }
+    if(this.event + ' ' + data === 'key.pressed NumPad 3') {
+      teleport(config.traderSnow);
+    }    
   });
 
   gkm.events.on('mouse.pressed', function(data) {
@@ -43,6 +52,15 @@ if(config.hook === 'gkm') {
       autoRun();
     }
   });
+}
+
+function teleport(location) {
+  console.log(`Teleporting to ${location.name} ${chalk.yellow(location.x)} ${chalk.yellow(location.z)}`);
+  robot.setKeyboardDelay(800);
+  robot.keyTap('f1');
+  robot.typeString(`tp ${location.x} ${location.z}`);
+  robot.keyTap('enter');
+  robot.keyTap('f1');
 }
 
 let toggleClick = true;
@@ -96,16 +114,14 @@ function moleMode() {
 }
 
 function tpBase() {
-  console.log(`Teleporting to base ${chalk.yellow(config.base.x)} ${chalk.yellow(config.base.z)}`);
-  robot.setKeyboardDelay(800);
-  robot.keyTap('f1');
-  robot.typeString(`tp ${config.base.x} ${config.base.z}`);
-  robot.keyTap('enter');
-  robot.keyTap('f1');
+  teleport(config.base);
 }
 
-console.log('Pancarcho started.');
-console.log(`${chalk.yellow('Mouse 4')} -> Auto Click`);
-console.log(`${chalk.yellow('Mouse 5')} -> Auto Run`);
-console.log(`${chalk.yellow('F10')} -> Teleport to base`);
-console.log(`${chalk.yellow('NumPad 0')} -> Mole mode\n`);
+console.log(`\n${chalk.bold.greenBright('Pancarcho')} started\n`);
+console.log(`${chalk.green('Mouse 4')} -> Auto Click`);
+console.log(`${chalk.green('Mouse 5')} -> Auto Run`);
+console.log(`${chalk.green('F10')} -> Teleport to base`);
+console.log(`${chalk.green('NumPad 0')} -> Mole mode`);
+console.log(`${chalk.green('NumPad 1')} -> Teleport to trader in the forest`);
+console.log(`${chalk.green('NumPad 2')} -> Teleport to trader in the burning forest`);
+console.log(`${chalk.green('NumPad 3')} -> Teleport to trader in the snow\n`);

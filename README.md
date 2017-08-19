@@ -36,6 +36,9 @@ The default keymapping is as follows:
 - **Mouse 5** : Auto Clic
 - **F10** : Teleport to base (edit coordinates in config.js)
 - **Numpad 0** : Mole mode. Mantains click and walk every 1000 ms forward
+- **Numpad 1** : Teleport to trader in the **forest**
+- **Numpad 2** : Teleport to trader in the **burning forest**
+- **Numpad 3** : Teleport to trader in the **snow**
 
 ## License
 
