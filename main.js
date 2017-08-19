@@ -1,5 +1,6 @@
 'use strict';
 const config = require('./config');
+const chalk = require('chalk');
 const robot = require("robotjs");
 
 console.log(config.hook);
@@ -49,10 +50,12 @@ let toggleClick = true;
 function autoClick() {
   if(toggleClick) {
     robot.mouseToggle('down'); 
-    toggleClick = !toggleClick
+    toggleClick = !toggleClick;
+    console.log(`${chalk.yellow('Auto Click')} ${chalk.green('started')}`);
   } else {
     robot.mouseToggle('up'); 
-    toggleClick = !toggleClick
+    toggleClick = !toggleClick;
+    console.log(`${chalk.yellow('Auto Click')} ${chalk.red('stoped')}`);
   }
 }
 
@@ -62,11 +65,13 @@ function autoRun() {
   if(toggleRun) {
     robot.keyToggle('w', 'down');
     robot.keyToggle('shift', 'down'); 
-    toggleRun = !toggleRun
+    toggleRun = !toggleRun;
+    console.log(`${chalk.yellow('Auto Run')} ${chalk.green('started')}`);
   } else {
     robot.keyToggle('w', 'up');
     robot.keyToggle('shift', 'up'); 
-    toggleRun = !toggleRun
+    toggleRun = !toggleRun;
+    console.log(`${chalk.yellow('Auto Run')} ${chalk.red('stoped')}`);
   }
 }
 
@@ -80,15 +85,18 @@ function moleMode() {
       robot.keyToggle('w', 'down');
       robot.keyToggle('w', 'up');
     }, 1000);
-    moleToggle = !moleToggle 
+    moleToggle = !moleToggle;
+    console.log(`${chalk.yellow('Mole mode')} ${chalk.green('started')}`);
   } else {
     clearInterval(advanceInterval);
     robot.mouseToggle('up'); 
-    moleToggle = !moleToggle 
+    moleToggle = !moleToggle;
+    console.log(`${chalk.yellow('Mole mode')} ${chalk.red('stoped')}`);
   }
 }
 
 function tpBase() {
+  console.log(`Teleporting to base ${chalk.yellow(config.base.x)} ${chalk.yellow(config.base.z)}`);
   robot.setKeyboardDelay(800);
   robot.keyTap('f1');
   robot.typeString(`tp ${config.base.x} ${config.base.z}`);
@@ -96,4 +104,8 @@ function tpBase() {
   robot.keyTap('f1');
 }
 
-
+console.log('Pancarcho started.');
+console.log(`${chalk.yellow('Mouse 4')} -> Auto Click`);
+console.log(`${chalk.yellow('Mouse 5')} -> Auto Run`);
+console.log(`${chalk.yellow('F10')} -> Teleport to base`);
+console.log(`${chalk.yellow('NumPad 0')} -> Mole mode\n`);
