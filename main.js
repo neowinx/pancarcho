@@ -28,7 +28,7 @@ if(config.hook === 'gkm') {
     if(this.event + ' ' + data === 'key.pressed F10') {
       tpBase();
     }
-    if(this.event + ' ' + data === 'key.pressed Numpad 0') {
+    if(this.event + ' ' + data === 'key.pressed NumPad 0') {
       moleMode();
     }
   });
