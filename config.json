@@ -1,3 +1,7 @@
 {
-  "hook" : "iohook"
+  "hook" : "gkm",
+  "base" : {
+    "x" : 677,
+    "z" : 885
+  }
 }
