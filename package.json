@@ -22,7 +22,9 @@
   },
   "homepage": "https://github.com/neowinx/7-days-helper#readme",
   "dependencies": {
+    "chalk": "^2.1.0",
     "gkm": "^0.1.0",
+    "inquirer": "^3.2.2",
     "iohook": "^0.1.9",
     "robotjs": "^0.4.7"
   }
