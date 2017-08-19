@@ -70,19 +70,21 @@ function autoRun() {
   }
 }
 
-let moleMode = true;
+let moleToggle = true;
 let advanceInterval;
 function moleMode() {
-  if(moleMode) {
+  if(moleToggle ) {
     robot.mouseToggle('down'); 
     advanceInterval = setInterval(function(){
       robot.setKeyboardDelay(300);
       robot.keyToggle('w', 'down');
       robot.keyToggle('w', 'up');
     }, 1000);
+    moleToggle = !moleToggle 
   } else {
     clearInterval(advanceInterval);
     robot.mouseToggle('up'); 
+    moleToggle = !moleToggle 
   }
 }
 
