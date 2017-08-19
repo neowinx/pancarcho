@@ -16,6 +16,11 @@ npm install
 
 ## Use
 
+Be sure to edit the `config.json` and select the adcuate **hook** to listen for keyboard and mouse events.
+
+- **iohook**: Native implementation, so it should be fastest but sometimes it doesn't get well in some OS's (especially with newer and recently updated versions of glibc and etc)
+- **gkm**: It uses the Java hook events, so it works almost without a husstle, but it needs a `java` executable in the path
+
 ```bash
 npm start
 ```
@@ -24,11 +29,10 @@ npm start
 
 The default keymapping is as follows:
 
-- Mouse 3 : E
-- Mouse 4 : Autorun
-- Mouse 5 : Autoclic
-- F10 : Teleport to base (edit coordinates in config.js)
-- F11 : Teleport to anti horde structure (edit coordinates in config.js)
+- **Mouse 4** : Auto Run
+- **Mouse 5** : Auto Clic
+- **F10** : Teleport to base (edit coordinates in config.js)
+- **Numpad 0** : Mole mode. Mantains click and walk every 1000 ms forward
 
 ## License
 
