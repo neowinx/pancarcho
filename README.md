@@ -36,4 +36,4 @@ The default keymapping is as follows:
 
 ## License
 
-[CC1]
+[CC0 1.0 (Public Domain)](LICENSE.md)
