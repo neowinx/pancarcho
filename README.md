@@ -19,7 +19,7 @@ npm install
 
 ## Use
 
-Be sure to edit the `config.json` and select the adcuate **hook** to listen for keyboard and mouse events.
+Be sure to edit the `config.json` and select the adecuate **hook** to listen for keyboard and mouse events.
 
 - **iohook**: Native implementation, so it should be fastest but sometimes it doesn't get well in some OS's (especially with newer and recently updated versions of glibc and etc)
 - **gkm**: It uses the [JNativeHook](https://github.com/kwhat/jnativehook) events, so it works almost without a husstle, but it needs a `java` executable in the path (and maybe it's a bit slower?)
